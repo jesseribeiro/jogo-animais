@@ -37,33 +37,33 @@ public class Animal {
     }
 
     protected boolean pergunta(Jogo bicho) {
-            int retorno = JOptionPane.showConfirmDialog(null, "O animal que você pensou "+bicho.getValor()+"?", "", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-            if (retorno == 0) {
-                if (bicho.getPeixe().getPeixe() == null) {
-                    retorno = JOptionPane.showConfirmDialog(null, "O animal que você pensou é " + bicho.getPeixe().getValor()+"!", "", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-                    if(retorno == 0) {
-                        JOptionPane.showMessageDialog(null, "Acertei...");
-                        return true;
-                    } else {
-                        retornoErrado(bicho.getPeixe());
-                    }
+        int retorno = JOptionPane.showConfirmDialog(null, "O animal que você pensou "+bicho.getValor()+"?", "", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+        if (retorno == 0) {
+            if (bicho.getPeixe().getPeixe() == null) {
+                retorno = JOptionPane.showConfirmDialog(null, "O animal que você pensou é " + bicho.getPeixe().getValor()+"!", "", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+                if(retorno == 0) {
+                    JOptionPane.showMessageDialog(null, "Acertei...");
+                    return true;
                 } else {
-                   return pergunta(bicho.getPeixe());
+                    retornoErrado(bicho.getPeixe());
                 }
             } else {
-                if (bicho.getMacaco().getMacaco() == null) {
-                    retorno = JOptionPane.showConfirmDialog(null, "O animal que você pensou é " + bicho.getMacaco().getValor()+"!", "", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-                    if(retorno == 0) {
-                        JOptionPane.showMessageDialog(null, "Acertei...");
-                        return true;
-                    } else {
-                        retornoErrado(bicho.getMacaco());
-                    }
-                } else {
-                    return pergunta(bicho.getMacaco());
-                }
+               return pergunta(bicho.getPeixe());
             }
-            return false;
+        } else {
+            if (bicho.getMacaco().getMacaco() == null) {
+                retorno = JOptionPane.showConfirmDialog(null, "O animal que você pensou é " + bicho.getMacaco().getValor()+"!", "", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+                if(retorno == 0) {
+                    JOptionPane.showMessageDialog(null, "Acertei...");
+                    return true;
+                } else {
+                    retornoErrado(bicho.getMacaco());
+                }
+            } else {
+                return pergunta(bicho.getMacaco());
+            }
+        }
+        return false;
     }
 
     protected void retornoErrado(Jogo bicho) {
