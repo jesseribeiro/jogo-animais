@@ -41,7 +41,7 @@ public class Animal {
         if (retorno == 0) {
             if (bicho.getPeixe().getPeixe() == null) {
                 retorno = JOptionPane.showConfirmDialog(null, "O animal que você pensou é " + bicho.getPeixe().getValor()+"!", "", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-                if(retorno == 0) {
+                if (retorno == 0) {
                     JOptionPane.showMessageDialog(null, "Acertei...");
                     return true;
                 } else {
@@ -53,7 +53,7 @@ public class Animal {
         } else {
             if (bicho.getMacaco().getMacaco() == null) {
                 retorno = JOptionPane.showConfirmDialog(null, "O animal que você pensou é " + bicho.getMacaco().getValor()+"!", "", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-                if(retorno == 0) {
+                if (retorno == 0) {
                     JOptionPane.showMessageDialog(null, "Acertei...");
                     return true;
                 } else {
